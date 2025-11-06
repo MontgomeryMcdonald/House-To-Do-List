@@ -1,0 +1,26 @@
+{
+  "name": "ejs-student-starter",
+  "version": "1.0.0",
+  "description": "Student starter: Express + EJS + JSON data (no MongoDB)",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "lint:ejs": "ejs-lint \"views/**/*.ejs\"",
+    "lint": "npm run lint:ejs"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.19.3"
+  },
+  "devDependencies": {
+    "ejs-lint": "^2.0.1",
+    "nodemon": "^3.0.1"
+  }
+}

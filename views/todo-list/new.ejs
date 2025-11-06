@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <main class="container">
+    <h2>Add Student</h2>
+    <form method="post" action="/todo-list">
+      <label>Name of the Task: <input required name="taskName"></label>
+      <label>Who will perform this task? <input required name="taskExecutor"></label>
+      <label>Where will the task be?</label> <select name="taskLocation" id="taskLocation">
+        <option value="Kitchen">Kitchen</option>
+        <option value="Living Room">Living Room</option>
+        <option value="Bathroom">Bathroom</option>
+        <option value="Garage">Garage</option>
+        <option value="Yard">Yard</option>
+        <option value="Other">Other</option>
+      </select>
+      <label>When will this task be due? <input required type="Date" name="duedate"></label>
+      <label>Is this task done!? <input required type="radio" name="completed"></label>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+</html>

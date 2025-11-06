@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <main class="container">
+    <h2>Edit Student</h2>
+    <form method="post" action="/todo-list/<%= Task._id %>?_method=PUT">
+      <label>First Name<input required name="firstName" value="<%= Task.taskName %>"></label>
+      <label>Who does this Task? <input required name="taskExecutor" value="<%= Task.taskExecutor %>"></label>
+      <label>Due Date: <input required type="Date" value="<%= Task.duedate %>"></label>
+      <label>task location: <input required type="input" value="<%= Task.taskLocation %>"></label>
+      <label>task completed: <input required type="radio" value=<%= Task.completed ? "on" : "off" %>></label>
+      <button>Save</button>
+    </form>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+</html>

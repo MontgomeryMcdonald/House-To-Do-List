@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chores</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <main class="container">
+    <h2>Chores</h2>
+    <form class="filters" method="get">
+      <input type="text" name="search" value="<%= search %>" placeholder="Search task name or who is executing it">
+      <button>Filter</button>
+    </form>
+
+    <table>
+      <thead><tr><th>Task Name</th><th>Task Executor</th><th>Finish By</th><th>Completed</th><th>Location</th></tr></thead>
+      <tbody>
+        <% if (data.length === 0) { %>
+          <tr><td colspan="4"><em>No chores match your search.</em></td></tr>
+        <% } %>
+        <% data.forEach(function(s){ %>
+          <tr>
+            <td><a href="/todo-list/<%= s._id %>"><%= s.taskName %></a></td>
+            <td><%= s.taskExecutor %></td>
+            <td><%= s.duedate %></td>
+            <td><%= s.completed %></td>
+            <td><%= s.taskLocation %></td>
+            <td class="actions">
+              <a href="/todo-list/<%= s._id %>/edit">Edit</a>
+              <form method="post" action="/todo-list/<%= s._id %>?_method=DELETE" onsubmit="return confirm('Delete this chore?');">
+                <button>Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+</html>

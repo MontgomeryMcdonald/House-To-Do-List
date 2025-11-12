@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const taskSchema= new mongoose.Schema({
     "taskName" : {type: String, required:true},
     "duedate" : {type: String},
-    "taskExecutor" : {type: String, required:true},
+    "taskExecutor" : {type: String},
     "taskLocation" : {type: String, enum: ['Kitchen', 'Living Room', 'Bathroom', 'Bedroom', 'Garage', 'Yard', 'Other']},
     "completed" : {type: Boolean, required:true},
     
